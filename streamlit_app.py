@@ -273,7 +273,7 @@ elif st.session_state["current_step"] == "Final Decision":
         pdf.ln(10)
 
         # Save PDF to buffer
-        pdf_bytes=pdf.output(dest='S')
+        pdf_output=pdf.output(dest='S')
         if isinstance(pdf_output,bytearray):
             pdf_bytes=bytes(pdf_output)
         elif isinstance(pdf_output,str):
@@ -425,6 +425,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
