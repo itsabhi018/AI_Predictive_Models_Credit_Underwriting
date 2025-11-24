@@ -273,7 +273,7 @@ elif st.session_state["current_step"] == "Final Decision":
         pdf.ln(10)
 
         # Save PDF to buffer
-        pdf_bytes=pdf.output(dest='S').encode('latin-1')
+        pdf_bytes=pdf.output(dest='S')
 
         st.download_button(
         label="Download Report as PDF",
@@ -419,4 +419,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
