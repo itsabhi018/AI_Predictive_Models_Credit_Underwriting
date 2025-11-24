@@ -273,13 +273,11 @@ elif st.session_state["current_step"] == "Final Decision":
         pdf.ln(10)
 
         # Save PDF to buffer
-        buffer = BytesIO()
-        pdf.output(buffer, "S")
-        buffer.seek(0)
+        pdf_bytes=pdf.output(dest='S').encode('latin-1')
 
         st.download_button(
         label="Download Report as PDF",
-        data=buffer,
+        data=pdf_bytes,
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
@@ -421,3 +419,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
